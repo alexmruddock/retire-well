@@ -1,0 +1,19 @@
+{
+  "id": "mig_cn7oj465mpjjb55f9ul0",
+  "parentID": "mig_cn7oite5mpjjb55f9uk0",
+  "checksum": "1:5d9179182c2815382e321c229f86f4285db7084a8b09d6057b2f91711e444294",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "location_id",
+          "type": "link",
+          "link": {
+            "table": "locations"
+          }
+        },
+        "table": "staff"
+      }
+    }
+  ]
+}

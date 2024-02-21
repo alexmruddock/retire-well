@@ -1,0 +1,13 @@
+{
+  "id": "mig_cna9el7npnhl1vba7hp0",
+  "parentID": "mig_cna9eivnpnhl1vba7ho0",
+  "checksum": "1:ad1b39430484bd0d5e91dbe32886cddc9e855cbc9b6462146a63da00949a988d",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "organization_id",
+        "table": "contacts"
+      }
+    }
+  ]
+}

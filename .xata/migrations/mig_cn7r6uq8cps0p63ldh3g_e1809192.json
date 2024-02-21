@@ -1,0 +1,19 @@
+{
+  "id": "mig_cn7r6uq8cps0p63ldh3g",
+  "parentID": "mig_cn7r6ne5mpjjb55fa080",
+  "checksum": "1:e1809192a9545cc64992787ca5d9a16eec9a975b99b14250ff011456d14fe151",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "organization_id",
+          "type": "link",
+          "link": {
+            "table": "organizations"
+          }
+        },
+        "table": "contacts"
+      }
+    }
+  ]
+}

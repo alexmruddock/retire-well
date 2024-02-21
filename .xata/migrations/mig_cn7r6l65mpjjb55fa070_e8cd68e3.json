@@ -1,0 +1,12 @@
+{
+  "id": "mig_cn7r6l65mpjjb55fa070",
+  "parentID": "mig_cn7okvm5mpjjb55f9uq0",
+  "checksum": "1:e8cd68e347f38e89838c69cc4f900462de5adc7e14dbf375593b322b40d955d6",
+  "operations": [
+    {
+      "addTable": {
+        "table": "organizations"
+      }
+    }
+  ]
+}

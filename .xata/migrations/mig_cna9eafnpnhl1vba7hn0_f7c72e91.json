@@ -1,0 +1,19 @@
+{
+  "id": "mig_cna9eafnpnhl1vba7hn0",
+  "parentID": "mig_cna9e4i35510dj2o8td0",
+  "checksum": "1:f7c72e91db5f47bb37e128de05554cbafc183947f9a529f1d477aaa3a2d9382a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "resident",
+          "type": "link",
+          "link": {
+            "table": "residents"
+          }
+        },
+        "table": "payments"
+      }
+    }
+  ]
+}

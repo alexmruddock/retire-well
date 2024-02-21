@@ -1,0 +1,12 @@
+{
+  "id": "mig_cna9hrfnpnhl1vba7i1g",
+  "parentID": "mig_cna9hi7npnhl1vba7i00",
+  "checksum": "1:df4ebe662dfcc3bc8a4f9114a113e8fdc761e9938b4f390c8fae5a8f668f95c4",
+  "operations": [
+    {
+      "addTable": {
+        "table": "folders"
+      }
+    }
+  ]
+}

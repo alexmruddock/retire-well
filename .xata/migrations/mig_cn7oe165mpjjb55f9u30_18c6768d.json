@@ -1,0 +1,13 @@
+{
+  "id": "mig_cn7oe165mpjjb55f9u30",
+  "parentID": "mig_cn7odke5mpjjb55f9u20",
+  "checksum": "1:18c6768d473d1256f32b44c5a71051de9484ba789a1c37f0048d9837e49b2f64",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "status",
+        "table": "residents"
+      }
+    }
+  ]
+}

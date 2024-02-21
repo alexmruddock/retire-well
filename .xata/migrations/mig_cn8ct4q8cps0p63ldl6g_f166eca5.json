@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn8ct4q8cps0p63ldl6g",
+  "parentID": "mig_cn8ccpm5mpjjb55fa6j0",
+  "checksum": "1:f166eca51be8a7173554f30bc1c3f47a857b6959a4387dcb4a94852fd55a2335",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "job_title",
+          "type": "string"
+        },
+        "table": "staff"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn7odke5mpjjb55f9u20",
+  "parentID": "mig_cn7odfe5mpjjb55f9u10",
+  "checksum": "1:589e5ebd028780dca4ac20e1c41791b98e4819e489f037b4c4901ec5d8246b3f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "status",
+          "type": "multiple"
+        },
+        "table": "residents"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn7oje65mpjjb55f9um0",
+  "parentID": "mig_cn7oj465mpjjb55f9ul0",
+  "checksum": "1:7da97bf4661576169241c4e9e5bc1f53f1ec9360137fc0be849b1423f3425126",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "phone_number",
+          "type": "string"
+        },
+        "table": "staff"
+      }
+    }
+  ]
+}

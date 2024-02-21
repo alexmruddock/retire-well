@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnb1ueflcpuv9pl1eabg",
+  "parentID": "mig_cnb1ubkacas9b5932ue0",
+  "checksum": "1:866db11d59c6b0361167672b5a826a22a9c70fbaeac1578138b27891160903f9",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "role",
+          "type": "string"
+        },
+        "table": "invited"
+      }
+    }
+  ]
+}

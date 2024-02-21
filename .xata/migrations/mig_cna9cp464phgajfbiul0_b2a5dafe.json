@@ -1,0 +1,16 @@
+{
+  "id": "mig_cna9cp464phgajfbiul0",
+  "parentID": "mig_cna9cffnpnhl1vba7hm0",
+  "checksum": "1:b2a5dafef804121c32b844ca12abdd3cec84d434acbf908e2f435159de775a8c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "status",
+          "type": "string"
+        },
+        "table": "payments"
+      }
+    }
+  ]
+}

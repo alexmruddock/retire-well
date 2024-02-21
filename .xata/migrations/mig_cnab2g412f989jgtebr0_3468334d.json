@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnab2g412f989jgtebr0",
+  "parentID": "mig_cna9i57npnhl1vba7i3g",
+  "checksum": "1:3468334d697fa183a953def2d6b13aefb0350d370f45c6d91f0293eb126bfa70",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "due_date",
+          "type": "datetime"
+        },
+        "table": "payments"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mig_cna9gbs64phgajfbiuq0",
+  "parentID": "mig_cna9g5235510dj2o8th0",
+  "checksum": "1:b1cea03f3e0427b82756b54602fc5d98409393ae82d164995d68ebfd3264e334",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "location",
+          "type": "link",
+          "link": {
+            "table": "locations"
+          }
+        },
+        "table": "residents"
+      }
+    }
+  ]
+}

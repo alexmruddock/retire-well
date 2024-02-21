@@ -1,0 +1,19 @@
+{
+  "id": "mig_cn7ofh65mpjjb55f9u80",
+  "parentID": "mig_cn7oe765mpjjb55f9u40",
+  "checksum": "1:f1b1a4ae95d07157d9a75854f515aa09ce9f68a8411af0f256b593e64238d250",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "resident_id",
+          "type": "link",
+          "link": {
+            "table": "residents"
+          }
+        },
+        "table": "contacts"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mig_cna9gfnnpnhl1vba7ht0",
+  "parentID": "mig_cna9gbs64phgajfbiuq0",
+  "checksum": "1:10920dc872bb5ce829f2312b2f7c7695c338e82dfaf79e241ea0bf435ebbc7ae",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "organization",
+          "type": "link",
+          "link": {
+            "table": "organizations"
+          }
+        },
+        "table": "residents"
+      }
+    }
+  ]
+}

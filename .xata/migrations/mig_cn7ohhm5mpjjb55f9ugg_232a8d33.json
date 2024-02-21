@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn7ohhm5mpjjb55f9ugg",
+  "parentID": "mig_cn7ohe65mpjjb55f9ufg",
+  "checksum": "1:232a8d33c3e036d57b58f0df9ee6959398241a0ad908fd463cf833c3521a1759",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "capacity",
+          "type": "string"
+        },
+        "table": "locations"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mig_cn7od465mpjjb55f9u00",
+  "parentID": "mig_cn7oct65mpjjb55f9tv0",
+  "checksum": "1:7efb22f67b63da9942910f428a2f491d61a71b817060e8d5601e0c8ead45d21f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "emergency_contact_id",
+          "type": "link",
+          "link": {
+            "table": "contacts"
+          }
+        },
+        "table": "residents"
+      }
+    }
+  ]
+}

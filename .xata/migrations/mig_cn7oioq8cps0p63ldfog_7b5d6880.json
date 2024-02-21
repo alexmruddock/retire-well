@@ -1,0 +1,12 @@
+{
+  "id": "mig_cn7oioq8cps0p63ldfog",
+  "parentID": "mig_cn7ohhm5mpjjb55f9ugg",
+  "checksum": "1:7b5d68807a9784dbaa4329b35954e631ada329e09e648550113840a707502170",
+  "operations": [
+    {
+      "addTable": {
+        "table": "staff"
+      }
+    }
+  ]
+}

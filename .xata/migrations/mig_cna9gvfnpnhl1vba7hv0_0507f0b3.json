@@ -1,0 +1,19 @@
+{
+  "id": "mig_cna9gvfnpnhl1vba7hv0",
+  "parentID": "mig_cna9gsi35510dj2o8tj0",
+  "checksum": "1:0507f0b3f868088b2832f233e9ef8e1078b110c57f2ddc1e2d9751cf37e23ae0",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "organization",
+          "type": "link",
+          "link": {
+            "table": "organizations"
+          }
+        },
+        "table": "staff"
+      }
+    }
+  ]
+}

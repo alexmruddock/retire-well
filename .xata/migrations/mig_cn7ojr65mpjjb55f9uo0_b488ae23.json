@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn7ojr65mpjjb55f9uo0",
+  "parentID": "mig_cn7ojm65mpjjb55f9un0",
+  "checksum": "1:b488ae23e0f6efe7833859e95e9d8fd9fb0431a5162e05015e9ea0d95e083aa9",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "qualifications",
+          "type": "multiple"
+        },
+        "table": "staff"
+      }
+    }
+  ]
+}

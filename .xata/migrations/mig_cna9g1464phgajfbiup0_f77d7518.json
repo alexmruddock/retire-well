@@ -1,0 +1,13 @@
+{
+  "id": "mig_cna9g1464phgajfbiup0",
+  "parentID": "mig_cna9g07npnhl1vba7hs0",
+  "checksum": "1:f77d751821d084ddb00b09067097fa19168c855eb5a6d12ef24d933ec4c62694",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "organization_id",
+        "table": "residents"
+      }
+    }
+  ]
+}

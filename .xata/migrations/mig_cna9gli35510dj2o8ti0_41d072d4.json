@@ -1,0 +1,13 @@
+{
+  "id": "mig_cna9gli35510dj2o8ti0",
+  "parentID": "mig_cna9gfnnpnhl1vba7ht0",
+  "checksum": "1:41d072d4db13a7f69751832ccd81925336adbe76719696f76b490e003986ddaf",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "location_id",
+        "table": "staff"
+      }
+    }
+  ]
+}

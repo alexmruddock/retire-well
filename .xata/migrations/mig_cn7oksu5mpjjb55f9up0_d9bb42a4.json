@@ -1,0 +1,13 @@
+{
+  "id": "mig_cn7oksu5mpjjb55f9up0",
+  "parentID": "mig_cn7okhi8cps0p63ldfqg",
+  "checksum": "1:d9bb42a4accf6ac7855c84a0a63256fb887751569484d2e713f0d5a761a9ef50",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "health_information",
+        "table": "residents"
+      }
+    }
+  ]
+}

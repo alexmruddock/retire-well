@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn7ohe65mpjjb55f9ufg",
+  "parentID": "mig_cn7oh9m5mpjjb55f9ueg",
+  "checksum": "1:7632bd08b9bb6a44b38bb99db52104b1dc8eae762dd201241504c4fb5c0dbed0",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "phone_number",
+          "type": "string"
+        },
+        "table": "locations"
+      }
+    }
+  ]
+}

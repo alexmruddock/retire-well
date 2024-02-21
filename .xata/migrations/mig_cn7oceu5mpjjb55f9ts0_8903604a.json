@@ -1,0 +1,12 @@
+{
+  "id": "mig_cn7oceu5mpjjb55f9ts0",
+  "parentID": "mig_cn7oblu5mpjjb55f9tqg",
+  "checksum": "1:8903604a10a737bbdb3c7e8405bd11671c046711525f1dad4e8ab62c88e857b8",
+  "operations": [
+    {
+      "addTable": {
+        "table": "residents"
+      }
+    }
+  ]
+}

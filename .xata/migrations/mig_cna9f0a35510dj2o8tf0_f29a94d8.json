@@ -1,0 +1,19 @@
+{
+  "id": "mig_cna9f0a35510dj2o8tf0",
+  "parentID": "mig_cna9epnnpnhl1vba7hq0",
+  "checksum": "1:f29a94d89c818570e67d2f5a716ac6b6910d0f19ef31343f6127071a55dd8dd2",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "location",
+          "type": "link",
+          "link": {
+            "table": "locations"
+          }
+        },
+        "table": "contacts"
+      }
+    }
+  ]
+}

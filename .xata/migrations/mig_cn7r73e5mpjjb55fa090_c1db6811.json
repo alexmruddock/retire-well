@@ -1,0 +1,19 @@
+{
+  "id": "mig_cn7r73e5mpjjb55fa090",
+  "parentID": "mig_cn7r6uq8cps0p63ldh3g",
+  "checksum": "1:c1db68115a826a7853280df75f1c84924c9aa925c345e3bcf200ae556e3ead4d",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "organization_id",
+          "type": "link",
+          "link": {
+            "table": "organizations"
+          }
+        },
+        "table": "locations"
+      }
+    }
+  ]
+}

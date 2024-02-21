@@ -1,0 +1,19 @@
+{
+  "id": "mig_cna9dsi35510dj2o8tc0",
+  "parentID": "mig_cna9di235510dj2o8tb0",
+  "checksum": "1:2a9c333462e18012a8ea1de3c4575c15f3c22b48b0dd4e137699aef4af14346a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "organization",
+          "type": "link",
+          "link": {
+            "table": "organizations"
+          }
+        },
+        "table": "payments"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn7okvm5mpjjb55f9uq0",
+  "parentID": "mig_cn7oksu5mpjjb55f9up0",
+  "checksum": "1:e9faea8ca47b3bb02bd26a3c94738cafae57ff5726ce4afcc103dfd673f7a1b9",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "health_information",
+          "type": "multiple"
+        },
+        "table": "residents"
+      }
+    }
+  ]
+}

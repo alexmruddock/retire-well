@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn7oirm5mpjjb55f9uj0",
+  "parentID": "mig_cn7oioq8cps0p63ldfog",
+  "checksum": "1:e19a7f4118cec9f4b95a6df4a6e44292d25f8e9592192cb9179b33df1158702b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string"
+        },
+        "table": "staff"
+      }
+    }
+  ]
+}

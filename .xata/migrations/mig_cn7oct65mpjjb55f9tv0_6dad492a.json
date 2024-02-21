@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn7oct65mpjjb55f9tv0",
+  "parentID": "mig_cn7ocp65mpjjb55f9tu0",
+  "checksum": "1:6dad492a9717664af7854a739db0b4915da69e7e1d38f053a1821de987387bb4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "room_number",
+          "type": "string"
+        },
+        "table": "residents"
+      }
+    }
+  ]
+}

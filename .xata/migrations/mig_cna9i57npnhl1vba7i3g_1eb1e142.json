@@ -1,0 +1,19 @@
+{
+  "id": "mig_cna9i57npnhl1vba7i3g",
+  "parentID": "mig_cna9i0nnpnhl1vba7i2g",
+  "checksum": "1:1eb1e1426812fd51323c09de775ba8e36ce51b8f661b3eafff3751450c5a4bbe",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "organization",
+          "type": "link",
+          "link": {
+            "table": "organizations"
+          }
+        },
+        "table": "folders"
+      }
+    }
+  ]
+}

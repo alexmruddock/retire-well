@@ -1,0 +1,19 @@
+{
+  "id": "mig_cnb1uicacas9b5932uf0",
+  "parentID": "mig_cnb1ueflcpuv9pl1eabg",
+  "checksum": "1:d644199dad1d4a45a9d646c9ccb569b8fd3cbf537436a3d6046f140a293e0d8f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "organization",
+          "type": "link",
+          "link": {
+            "table": "organizations"
+          }
+        },
+        "table": "invited"
+      }
+    }
+  ]
+}

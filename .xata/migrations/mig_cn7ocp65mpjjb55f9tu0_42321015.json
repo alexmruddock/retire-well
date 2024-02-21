@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn7ocp65mpjjb55f9tu0",
+  "parentID": "mig_cn7ocjm5mpjjb55f9tt0",
+  "checksum": "1:423210158cebe3bce37cc4bd29c2cb83864c0571d75d046ca37c4be06415b5c1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "date_of_birth",
+          "type": "datetime"
+        },
+        "table": "residents"
+      }
+    }
+  ]
+}

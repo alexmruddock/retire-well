@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnb218sacas9b5932uh0",
+  "parentID": "mig_cnb1uicacas9b5932uf0",
+  "checksum": "1:9e1dbade0ebaf77b30ed91f3e9fa0ad08c11038541e5ea1e81e54ee385c4357d",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "status",
+          "type": "string"
+        },
+        "table": "invited"
+      }
+    }
+  ]
+}
