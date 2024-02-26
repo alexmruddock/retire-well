@@ -10,11 +10,6 @@ export const metadata: Metadata = {
   description: "Vertical SaaS for assisted living facilities.",
 };
 
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,10 +19,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )} >
+        <body>
           <Navbar />
           <div>
             {children}

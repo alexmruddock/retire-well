@@ -51,7 +51,7 @@ export default async function AdminFoldersPage() {
 
     return (
         <>
-            <div className="text-bold text-lg text-center py-5">
+            <div className="font-bold text-xl text-center py-5">
                 <h1>Folders</h1>
             </div>
             <div className="container mx-auto py-5 items-center justify-normal">

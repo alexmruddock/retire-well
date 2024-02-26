@@ -1,0 +1,19 @@
+{
+  "id": "mig_cnbnl1phs1bqm5vjr8p0",
+  "parentID": "mig_cnbltmbskumninl0ieqg",
+  "checksum": "1:30c32397c63676a8f642bc943b83fe8af2d976abcf7112a316baa86d822b2728",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "user",
+          "type": "link",
+          "link": {
+            "table": "users"
+          }
+        },
+        "table": "staff"
+      }
+    }
+  ]
+}

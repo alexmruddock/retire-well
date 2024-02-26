@@ -20,17 +20,13 @@ import { Badge } from "@/app/components/ui/badge"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type InvitedUser = {
+export type Organization = {
     id: string
     name: string
-    email: string
-    role: string
-    status: string
-    organizationId: string
 }
 
 // need to figure out how to go from xata data to ColumnDef
-export const columns: ColumnDef<InvitedUser>[] = [
+export const columns: ColumnDef<Organization>[] = [
     {
         id: "select",
         header: ({ table }) => (
@@ -68,33 +64,17 @@ export const columns: ColumnDef<InvitedUser>[] = [
         },
     },
     {
-        accessorKey: "email",
-        header: "Email",
+        accessorKey: "primaryAdminName",
+        header: "Primary Admin",
     },
     {
-        accessorKey: "role",
-        header: "Role",
-        cell: ({ row }) => {
-            const staff = row.original
-            return <Badge>{staff.role}</Badge>
-        },
-    },
-    {
-        accessorKey: "status",
-        header: "Status",
-        cell: ({ row }) => {
-            const staff = row.original
-            return <Badge variant="outline">{staff.status}</Badge>
-        },
-    },
-    {
-        accessorKey: "organizationId",
-        header: "Organization",
+        accessorKey: "primaryAdminEmail",
+        header: "Primary Admin Email",
     },
     {
         id: "actions",
         cell: ({ row }) => {
-            const staff = row.original
+            const organization = row.original
 
             return (
                 <DropdownMenu>
@@ -107,9 +87,9 @@ export const columns: ColumnDef<InvitedUser>[] = [
                     <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
                         <DropdownMenuItem
-                            onClick={() => navigator.clipboard.writeText(staff.email)}
+                            onClick={() => navigator.clipboard.writeText(organization.id)}
                         >
-                            Copy email
+                            Copy ID
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
                     </DropdownMenuContent>

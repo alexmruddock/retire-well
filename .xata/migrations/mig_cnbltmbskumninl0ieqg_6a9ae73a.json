@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnbltmbskumninl0ieqg",
+  "parentID": "mig_cnblthphs1bqm5vjr8dg",
+  "checksum": "1:6a9ae73a5ae0ce77a2df950a018cba477f7faea82061b77b4c6a5b4d154736c1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "primary_admin_email",
+          "type": "string"
+        },
+        "table": "organizations"
+      }
+    }
+  ]
+}

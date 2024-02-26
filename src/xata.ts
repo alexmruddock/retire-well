@@ -68,11 +68,16 @@ const tables = [
       { name: "job_title", type: "string" },
       { name: "location", type: "link", link: { table: "locations" } },
       { name: "organization", type: "link", link: { table: "organizations" } },
+      { name: "user", type: "link", link: { table: "users" } },
     ],
   },
   {
     name: "organizations",
-    columns: [{ name: "name", type: "string" }],
+    columns: [
+      { name: "name", type: "string" },
+      { name: "primary_admin_name", type: "string" },
+      { name: "primary_admin_email", type: "string" },
+    ],
     revLinks: [
       { column: "organization", table: "payments" },
       { column: "organization", table: "contacts" },
@@ -109,7 +114,9 @@ const tables = [
     columns: [
       { name: "user_id", type: "string" },
       { name: "organization", type: "link", link: { table: "organizations" } },
+      { name: "role", type: "string" },
     ],
+    revLinks: [{ column: "user", table: "staff" }],
   },
   {
     name: "invited",

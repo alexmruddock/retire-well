@@ -17,6 +17,8 @@ import { UserButton, useUser } from '@clerk/nextjs';
 
 export default function Navbar() {
     const { user, isLoaded } = useUser();
+    console.log("User: ", user);
+    console.log("IsLoaded: ", isLoaded);
 
     return (
         <nav className="flex flex-wrap gap-3 p-4 items-center justify-between shadow-md">
@@ -70,6 +72,20 @@ export default function Navbar() {
                                 <Link href="/pages/admin/invite-list">
                                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Invite List
+                                    </NavigationMenuLink>
+                                </Link>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <Link href="/pages/admin/settings">
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                        Settings
+                                    </NavigationMenuLink>
+                                </Link>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <Link href="/pages/super-admin/organizations">
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                        Organizations
                                     </NavigationMenuLink>
                                 </Link>
                             </NavigationMenuItem>
