@@ -1,0 +1,16 @@
+{
+  "id": "mig_cned4mg4l19bm07lm130",
+  "parentID": "mig_cned4jjp7aigmpatk6m0",
+  "checksum": "1:82e6e9b864fe23b41e11459521506083ee3725eaf9a0e95f6f78ba3c7db4abc3",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "capacity",
+          "type": "int"
+        },
+        "table": "locations"
+      }
+    }
+  ]
+}

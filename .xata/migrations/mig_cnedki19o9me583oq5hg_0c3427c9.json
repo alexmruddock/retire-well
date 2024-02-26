@@ -1,0 +1,19 @@
+{
+  "id": "mig_cnedki19o9me583oq5hg",
+  "parentID": "mig_cned4mg4l19bm07lm130",
+  "checksum": "1:0c3427c9263417cacfc29b652b665ec6b0e8c3134979e48ef01b40e1a557bfa1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "user",
+          "type": "link",
+          "link": {
+            "table": "users"
+          }
+        },
+        "table": "residents"
+      }
+    }
+  ]
+}

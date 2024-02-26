@@ -17,6 +17,7 @@ const tables = [
       { name: "resident", type: "link", link: { table: "residents" } },
       { name: "location", type: "link", link: { table: "locations" } },
       { name: "organization", type: "link", link: { table: "organizations" } },
+      { name: "user", type: "link", link: { table: "users" } },
     ],
     revLinks: [{ column: "emergency_contact", table: "residents" }],
   },
@@ -31,6 +32,8 @@ const tables = [
       { name: "emergency_contact", type: "link", link: { table: "contacts" } },
       { name: "location", type: "link", link: { table: "locations" } },
       { name: "organization", type: "link", link: { table: "organizations" } },
+      { name: "user", type: "link", link: { table: "users" } },
+      { name: "email", type: "email" },
     ],
     revLinks: [
       { column: "resident", table: "payments" },
@@ -46,8 +49,8 @@ const tables = [
       { name: "state", type: "string" },
       { name: "country", type: "string" },
       { name: "phone_number", type: "string" },
-      { name: "capacity", type: "string" },
       { name: "organization", type: "link", link: { table: "organizations" } },
+      { name: "capacity", type: "int" },
     ],
     revLinks: [
       { column: "location", table: "residents" },
@@ -116,7 +119,11 @@ const tables = [
       { name: "organization", type: "link", link: { table: "organizations" } },
       { name: "role", type: "string" },
     ],
-    revLinks: [{ column: "user", table: "staff" }],
+    revLinks: [
+      { column: "user", table: "staff" },
+      { column: "user", table: "residents" },
+      { column: "user", table: "contacts" },
+    ],
   },
   {
     name: "invited",

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnedmojuturo10a505vg",
+  "parentID": "mig_cnedknbuturo10a505ug",
+  "checksum": "1:60c9ee04a47db9a31166def592f5fba3dbc37b74cb86257b7df8be925beea9c3",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "email",
+          "type": "email"
+        },
+        "table": "residents"
+      }
+    }
+  ]
+}

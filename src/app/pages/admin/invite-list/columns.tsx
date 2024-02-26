@@ -17,6 +17,7 @@ import { Checkbox } from "@/app/components/ui/checkbox"
 import Link from "next/link"
 
 import { Badge } from "@/app/components/ui/badge"
+import { revalidatePath } from "next/cache"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -94,7 +95,7 @@ export const columns: ColumnDef<InvitedUser>[] = [
     {
         id: "actions",
         cell: ({ row }) => {
-            const staff = row.original
+            const invitedContact = row.original
 
             return (
                 <DropdownMenu>
@@ -107,11 +108,25 @@ export const columns: ColumnDef<InvitedUser>[] = [
                     <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
                         <DropdownMenuItem
-                            onClick={() => navigator.clipboard.writeText(staff.email)}
+                            onClick={() => navigator.clipboard.writeText(invitedContact.email)}
                         >
                             Copy email
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
+                        <DropdownMenuItem
+                            className="text-red-600 dark:text-red-500"
+                            onClick={
+                                async () => await fetch(`/api/admin/invites`, {
+                                    method: 'DELETE',
+                                    body: JSON.stringify({
+                                        id: invitedContact.id
+                                    }),
+                                }).then(() =>
+                                    revalidatePath('/pages/admin/invite-list'))
+                            }
+                        >
+                            Delete contact
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             )

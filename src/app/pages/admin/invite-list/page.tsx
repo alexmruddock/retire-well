@@ -36,7 +36,6 @@ export default async function InviteListPage({ }: Props) {
             <div className="container mx-auto py-5 items-center justify-normal">
                 <div>
                     <Button>
-                        {/* create a new invite and Link to the new-invite page */}
                         <Link href="/pages/admin/invite-list/new-invite">
                             Create New Invite
                         </Link>

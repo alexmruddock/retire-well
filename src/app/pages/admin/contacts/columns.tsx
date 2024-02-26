@@ -15,6 +15,7 @@ import {
 
 import { Checkbox } from "@/app/components/ui/checkbox"
 import Link from "next/link"
+import { revalidatePath } from "next/cache"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -85,7 +86,7 @@ export const columns: ColumnDef<Contact>[] = [
             const contact = row.original
             return (
                 <Link href={`/pages/admin/residents/${contact.residentId}`}>
-                    <div className="text-right text-blue-600 dark:text-blue-500 hover:underline">View Resident</div>
+                    <div className="text-blue-600 dark:text-blue-500 hover:underline">View Resident</div>
                 </Link>
             )
         },
@@ -97,7 +98,7 @@ export const columns: ColumnDef<Contact>[] = [
             const contact = row.original
             return (
                 <Link href={`/pages/admin/contacts/${contact.id}`}>
-                    <div className="text-right text-blue-600 dark:text-blue-500 hover:underline">View Contact</div>
+                    <div className="text-blue-600 dark:text-blue-500 hover:underline">View Contact</div>
                 </Link>
             )
         },
@@ -129,6 +130,21 @@ export const columns: ColumnDef<Contact>[] = [
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>View file</DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem
+                            className="text-red-600 dark:text-red-500"
+                            onClick={
+                                async () => await fetch(`/api/admin/contacts`, {
+                                    method: 'DELETE',
+                                    body: JSON.stringify({
+                                        id: contact.id
+                                    }),
+                                }).then(() =>
+                                    revalidatePath('/pages/admin/contacts'))
+                            }
+                        >
+                            Delete contact
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             )

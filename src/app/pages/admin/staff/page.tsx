@@ -1,8 +1,7 @@
-import StaffTable from '@/app/components/admin/StaffTable';
 import { getXataClient } from '@/xata';
 import React from 'react'
 import { DataTable } from "./data-table"
-import { Staff, columns } from "./columns"
+import { columns } from "./columns"
 
 type Props = {}
 

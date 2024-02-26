@@ -1,8 +1,9 @@
-import LocationsTable from '@/app/components/admin/LocationsTable';
 import { getXataClient } from '@/xata';
 import React from 'react'
 import { DataTable } from "./data-table"
 import { Location, columns } from "./columns"
+import { Button } from '@/app/components/ui/button';
+import Link from 'next/link';
 
 type Props = {}
 
@@ -36,6 +37,11 @@ export default async function LocationsPage({ }: Props) {
                 <h1>Locations</h1>
             </div>
             <div className="container mx-auto py-5 items-center justify-normal">
+                <Button>
+                    <Link href="/pages/admin/locations/new-location">
+                        Create New Location
+                    </Link>
+                </Button>
                 <DataTable columns={columns} data={data} />
             </div>
         </>

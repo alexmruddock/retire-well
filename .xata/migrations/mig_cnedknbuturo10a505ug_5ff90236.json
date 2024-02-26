@@ -1,0 +1,19 @@
+{
+  "id": "mig_cnedknbuturo10a505ug",
+  "parentID": "mig_cnedki19o9me583oq5hg",
+  "checksum": "1:5ff902360df665587302a7ac8f7c08c9375afdcb4427911b71113fbb280cd045",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "user",
+          "type": "link",
+          "link": {
+            "table": "users"
+          }
+        },
+        "table": "contacts"
+      }
+    }
+  ]
+}

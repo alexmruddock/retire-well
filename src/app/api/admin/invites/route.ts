@@ -37,3 +37,11 @@ export async function PUT(request: Request) {
 
     return new Response("Contact information: " + data, { status: 200 });
 }
+
+export async function DELETE(request: Request) {
+    const xata = getXataClient();
+    const data = await request.json();
+    const id = data.id;
+    await xata.db.invited.delete(id);
+    return new Response("Contact deleted: " + id, { status: 200 });
+}

@@ -1,4 +1,3 @@
-import ContactsTable from '@/app/components/admin/ContactsTable';
 import { getXataClient } from '@/xata';
 import React from 'react'
 import { DataTable } from "./data-table"

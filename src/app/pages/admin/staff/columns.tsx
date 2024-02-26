@@ -17,6 +17,7 @@ import { Checkbox } from "@/app/components/ui/checkbox"
 import Link from "next/link"
 
 import { Badge } from "@/app/components/ui/badge"
+import { revalidatePath } from "next/cache"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -112,7 +113,7 @@ export const columns: ColumnDef<Staff>[] = [
             const staff = row.original
             return (
                 <Link href={`/pages/admin/staff/${staff.id}`}>
-                    <div className="text-right text-blue-600 dark:text-blue-500 hover:underline">View Staff Member</div>
+                    <div className="text-blue-600 dark:text-blue-500 hover:underline">View Staff Member</div>
                 </Link>
             )
         },
@@ -143,6 +144,20 @@ export const columns: ColumnDef<Staff>[] = [
                             Copy phone number
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
+                        <DropdownMenuItem
+                            className="text-red-600 dark:text-red-500"
+                            onClick={
+                                async () => await fetch(`/api/admin/staff`, {
+                                    method: 'DELETE',
+                                    body: JSON.stringify({
+                                        id: staff.id
+                                    }),
+                                }).then(() =>
+                                    revalidatePath('/pages/admin/staff'))
+                            }
+                        >
+                            Delete contact
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             )

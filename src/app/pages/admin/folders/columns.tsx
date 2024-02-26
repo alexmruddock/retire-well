@@ -5,15 +5,16 @@ import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 
 import { Button } from "@/app/components/ui/button"
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-  } from "@/app/components/ui/dropdown-menu"
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/app/components/ui/dropdown-menu"
 
 import { Checkbox } from "@/app/components/ui/checkbox"
+import { revalidatePath } from "next/cache"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -21,6 +22,17 @@ export type Folder = {
   id: string
   name: string
   user_id: string
+}
+
+async function deleteFolder(id: string) {
+  await fetch(`/api/admin/folders`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id }),
+  })
+  revalidatePath("/pages/admin/folders")
 }
 
 // need to figure out how to go from xata data to ColumnDef
@@ -50,22 +62,22 @@ export const columns: ColumnDef<Folder>[] = [
   {
     accessorKey: "name",
     header: ({ column }) => {
-        return (
-          <Button
-            variant="ghost"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          >
-            Name
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-          </Button>
-        )
-      },
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Name
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
   },
   {
     id: "actions",
     cell: ({ row }) => {
       const folder = row.original
- 
+
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -82,7 +94,23 @@ export const columns: ColumnDef<Folder>[] = [
               Copy folder ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View file</DropdownMenuItem>
+            <DropdownMenuItem>View file (does nothing right now)</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem
+              className="text-red-600 dark:text-red-500"
+              onClick={()=>{
+                // Execute deleteFolder asynchronously without directly returning a promise
+                deleteFolder(folder.id).then(() => {
+                  console.log("Folder deleted successfully");
+                  // Optionally, add code here to handle UI updates or notifications
+                }).catch((error) => {
+                  console.error("Error deleting folder:", error);
+                  // Handle errors, e.g., show an error notification
+                });
+              }}
+            >
+              Delete folder
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )

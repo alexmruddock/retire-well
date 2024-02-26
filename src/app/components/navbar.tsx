@@ -41,13 +41,6 @@ export default function Navbar() {
                                 </Link>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/pages/admin/locations">
-                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                        Locations
-                                    </NavigationMenuLink>
-                                </Link>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
                                 <Link href="/pages/admin/staff">
                                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Staff
@@ -55,9 +48,16 @@ export default function Navbar() {
                                 </Link>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/pages/admin/folders">
+                                <Link href="/pages/admin/invite-list">
                                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                        Folders
+                                        Invite List
+                                    </NavigationMenuLink>
+                                </Link>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <Link href="/pages/admin/locations">
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                        Locations
                                     </NavigationMenuLink>
                                 </Link>
                             </NavigationMenuItem>
@@ -69,9 +69,9 @@ export default function Navbar() {
                                 </Link>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/pages/admin/invite-list">
+                                <Link href="/pages/admin/folders">
                                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                        Invite List
+                                        Folders
                                     </NavigationMenuLink>
                                 </Link>
                             </NavigationMenuItem>

@@ -1,4 +1,3 @@
-import ResidentsTable from '@/app/components/admin/ResidentsTable';
 import { getXataClient } from '@/xata';
 import React from 'react'
 import { DataTable } from "./data-table"

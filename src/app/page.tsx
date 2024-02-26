@@ -1,7 +1,6 @@
 import { getXataClient } from "@/xata";
 import { auth, currentUser } from "@clerk/nextjs";
-import { redirect } from "next/navigation";
-import { revalidatePath } from "next/cache";
+import { permanentRedirect, redirect } from "next/navigation";
 
 export default async function Home() {
   const { userId } = auth();
@@ -29,13 +28,12 @@ export default async function Home() {
     if (userData.length === 1) {
       console.log("User exists. Here is their data: ", userData[0]);
       console.log("");
-      // revalidatePath('/pages');
-      // redirect("/pages/admin/residents");
+      redirect("/pages/admin/residents", );
     }
     // if not, begin the user creation flow
     else {
       const user_id = userId;
-      
+
       // check if the user is the primary admin
       const organizationData = await xata.db.organizations.filter({
         primary_admin_email: email
@@ -55,7 +53,7 @@ export default async function Home() {
         const organization = organizationData[0].id;
         const name = organizationData[0].primary_admin_name;
         const email = organizationData[0].primary_admin_email;
-        const role = "Admin"
+        const role = "Primary Admin"
         // create new user record
         const newRecord = { user_id, organization, role };
         await xata.db.users.create(newRecord);
@@ -86,16 +84,25 @@ export default async function Home() {
         console.log("New user created from Invite List data: ", userData);
         // create new staff record
         const user = userData[0].id;
-        await xata.db.staff.create({ user, organization, name, email, role });
+        if (role === "Primary Admin" || role === "Admin" || role === "Staff") {
+          await xata.db.staff.create({ user, organization, name, email, role });
+        } 
+        else if (role === "Resident") {
+          await xata.db.residents.create({ user, organization, name, email });
+        } 
+        else if (role === "Family") {
+          await xata.db.contacts.create({ user, organization, name, email });
+        } 
+        else {
+          throw new Error('Invalid role.');
+        }
         await xata.db.invited.update(invitedData[0].id, { status: "Accepted" });
-        // redirect("/pages/admin/residents");
+        redirect("/pages/admin/residents");
       }
-      // if not primary or invited, redirect to the sign-up page
+      // if not primary-admin or invited admin/staff/resident/contact, redirect to the sign-up page
       else {
         redirect("/sign-up");
       }
-      // revalidatePath('/pages/admin/residents');
-      // redirect("/pages/admin/residents");
     }
   }
 

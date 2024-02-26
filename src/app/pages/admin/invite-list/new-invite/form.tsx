@@ -46,14 +46,6 @@ export function InviteForm() {
     if(!userId) {
         redirect('/');
     }
-
-    // async function getUserData() {
-    //     const xata = getXataClient();
-    //     const userData = await xata.db.users.filter({
-    //         user_id: userId
-    //     }).getMany();
-    //     return userData;
-    // }
     
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -65,8 +57,6 @@ export function InviteForm() {
     })
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        //const userData = await getUserData();
-        //const organizationId = userData[0]?.organization?.id; 
         const createInvitedContact = await fetch(`/api/admin/invites`, {
             method: 'PUT',
             body: JSON.stringify({
@@ -89,7 +79,7 @@ export function InviteForm() {
                         <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input placeholder="xyz@abc.com" {...field} />
                             </FormControl>
                             <FormDescription>
                                 This is the email of the person you are inviting.
@@ -105,7 +95,7 @@ export function InviteForm() {
                         <FormItem>
                             <FormLabel>Name</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input placeholder="John Smith" {...field} />
                             </FormControl>
                             <FormDescription>
                                 This is the name of the person you are inviting.

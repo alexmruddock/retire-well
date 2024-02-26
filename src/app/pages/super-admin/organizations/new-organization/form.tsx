@@ -64,7 +64,7 @@ export function OrganizationCreationForm() {
                         <FormItem>
                             <FormLabel>Organization Name</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input placeholder="ACME Care" {...field} />
                             </FormControl>
                             <FormDescription>
                                 Please enter an organization name.
@@ -80,7 +80,7 @@ export function OrganizationCreationForm() {
                         <FormItem>
                             <FormLabel>Primary Admin Name</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input placeholder="Jane Smith" {...field} />
                             </FormControl>
                             <FormDescription>
                                 Please enter a primary admin name.
@@ -96,7 +96,7 @@ export function OrganizationCreationForm() {
                         <FormItem>
                             <FormLabel>Primary Admin Email</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input placeholder="jan.smith@email.com" {...field} />
                             </FormControl>
                             <FormDescription>
                                 Please enter a primary admin email.
