@@ -15,6 +15,7 @@ import BackButton from '@/app/components/BackButton';
 
 export default async function SingleLocationPage({ params }: { params: { locationId: string } }) {
     const xata = getXataClient();
+    console.log("Location ID: ", params.locationId);
     const location = await xata.db.locations.filter({ id: params.locationId }).getFirst();
 
     return (

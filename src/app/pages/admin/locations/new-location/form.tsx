@@ -16,7 +16,7 @@ import {
     FormMessage,
 } from "@/app/components/ui/form"
 import { Input } from "@/app/components/ui/input"
-import { redirect } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 import { auth, useUser } from '@clerk/nextjs';
 
 const formSchema = z.object({
@@ -39,6 +39,8 @@ export function LocationForm() {
     if (!userId) {
         redirect('/');
     }
+
+    const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -67,7 +69,7 @@ export function LocationForm() {
                 userId: userId,
             }),
         });
-        window.location.reload();
+        router.push('/pages/admin/locations');
     }
 
     return (

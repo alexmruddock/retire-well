@@ -17,9 +17,9 @@ export default async function SettingsPage() {
                 <h1>Settings</h1>
             </div>
             <div className='container'>
-            <p className="font-bold">Organization ID:</p> {userOrganizationId || 'Loading...'}
-            <p className="font-bold">Organization Name:</p> {userOrganizationName || 'Loading...'}
-        </div>
+                <p className="font-bold">Organization ID:</p> {userOrganizationId || 'Loading...'}
+                <p className="font-bold">Organization Name:</p> {userOrganizationName || 'Loading...'}
+            </div>
         </div>
     );
 }

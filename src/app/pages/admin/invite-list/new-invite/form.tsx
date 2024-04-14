@@ -23,10 +23,9 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/app/components/ui/select"
-import { getXataClient } from '@/xata';
-import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 import { auth, useUser } from '@clerk/nextjs';
+import { revalidatePath } from 'next/cache';
 
 const formSchema = z.object({
     email: z.string({
@@ -46,6 +45,8 @@ export function InviteForm() {
     if(!userId) {
         redirect('/');
     }
+
+    const router = useRouter();
     
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -66,7 +67,8 @@ export function InviteForm() {
                 userId: userId,
             }),
         });
-        redirect('/pages/admin/invite-list');
+        // revalidatePath('/pages/admin/invite-list');
+        router.push('/pages/admin/invite-list')
     }
 
     return (

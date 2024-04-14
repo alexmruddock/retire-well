@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Inter as FontSans } from "next/font/google"
-import { cn } from "@/lib/utils"
 import "./globals.css";
 import Navbar from "@/app/components/navbar";
 

@@ -20,6 +20,9 @@ export default async function AdminFoldersPage() {
         redirect('/')
     }
 
+    const userData = await xata.db.users.filter({ user_id: userId }).getMany();
+    const userOrganizationId = userData[0]?.organization?.id;
+
     async function createFolder(formData: FormData) {
         'use server';
         const parsedForm = schema.parse({
@@ -31,17 +34,23 @@ export default async function AdminFoldersPage() {
             return;
         }
 
-        const newRecord = { ...parsedForm, user_id };
+        const organization = userOrganizationId
+        
+        const newRecord = { ...parsedForm, user_id, organization};
+        
         const xata = getXataClient();
         await xata.db.folders.create(newRecord);
+
         revalidatePath('/pages/admin/folders');
     }
 
     const folders = await xata.db.folders.filter({
-        user_id: userId
+        user_id: userId,
     }).getMany();
 
-    const data: Folder[] = folders.map(folder => {
+    const filteredByOrg = folders.filter((folder: any) => folder.organization.id === userOrganizationId);
+
+    const data: Folder[] = filteredByOrg.map(folder => {
         return {
             id: folder.id,
             name: folder.name || '', // Assign an empty string if name is null or undefined

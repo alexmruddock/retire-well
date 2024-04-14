@@ -118,6 +118,7 @@ const tables = [
       { name: "user_id", type: "string" },
       { name: "organization", type: "link", link: { table: "organizations" } },
       { name: "role", type: "string" },
+      { name: "name", type: "string" },
     ],
     revLinks: [
       { column: "user", table: "staff" },

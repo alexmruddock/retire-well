@@ -1,12 +1,13 @@
 import { getXataClient } from "@/xata";
 import { auth, currentUser } from "@clerk/nextjs";
-import { permanentRedirect, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
   const { userId } = auth();
   const user = await currentUser();
   const email = user?.emailAddresses[0].emailAddress;
   const xata = getXataClient();
+  const inviteCount = 0;
 
   if (userId && email) {
     console.log("UserId: ", userId, "and Email: ", email)
@@ -25,9 +26,10 @@ export default async function Home() {
     console.log("");
 
     // if already exists, redirect to the residents page
-    if (userData.length === 1) {
+    if (userData.length === 1 && inviteCount === 0) {
       console.log("User exists. Here is their data: ", userData[0]);
       console.log("");
+      inviteCount + 1;
       redirect("/pages/admin/residents", );
     }
     // if not, begin the user creation flow
@@ -49,7 +51,7 @@ export default async function Home() {
       console.log("");
 
       // if primary admin, create the user record and redirect to the residents page
-      if (organizationData.length === 1 && invitedData.length === 0) {
+      if (organizationData.length === 1 && invitedData.length === 0 && inviteCount === 0) {
         const organization = organizationData[0].id;
         const name = organizationData[0].primary_admin_name;
         const email = organizationData[0].primary_admin_email;
@@ -67,11 +69,12 @@ export default async function Home() {
         const user = userData[0].id;
         console.log("User ID: ", user);
         await xata.db.staff.create({ user, organization, name, email, role });
+        inviteCount + 1;
         // redirect to the residents page
         redirect("/pages/admin/residents");
       }
       // if not primary admin but invited, create the user record and redirect to the residents page
-      else if (invitedData.length === 1 && invitedData[0].status === "Invited") {
+      else if (invitedData.length === 1 && invitedData[0].status === "Invited" && inviteCount === 0) {
         const organization = invitedData[0].organization?.id;
         const role = invitedData[0].role;
         const name = invitedData[0].name;
@@ -86,12 +89,15 @@ export default async function Home() {
         const user = userData[0].id;
         if (role === "Primary Admin" || role === "Admin" || role === "Staff") {
           await xata.db.staff.create({ user, organization, name, email, role });
+          inviteCount + 1;
         } 
         else if (role === "Resident") {
           await xata.db.residents.create({ user, organization, name, email });
+          inviteCount + 1;
         } 
         else if (role === "Family") {
           await xata.db.contacts.create({ user, organization, name, email });
+          inviteCount + 1;
         } 
         else {
           throw new Error('Invalid role.');
@@ -102,6 +108,7 @@ export default async function Home() {
       // if not primary-admin or invited admin/staff/resident/contact, redirect to the sign-up page
       else {
         redirect("/sign-up");
+        return false;
       }
     }
   }

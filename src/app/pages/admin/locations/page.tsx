@@ -4,13 +4,19 @@ import { DataTable } from "./data-table"
 import { Location, columns } from "./columns"
 import { Button } from '@/app/components/ui/button';
 import Link from 'next/link';
+import { auth } from '@clerk/nextjs';
+import { revalidatePath } from 'next/cache';
 
 type Props = {}
+const { userId } = auth();
 
 async function getLocations() {
     const xata = getXataClient();
     const data = await xata.db.locations.getAll();
-    return data;
+    const userData = await xata.db.users.filter({ user_id: userId }).getMany();
+    const userOrganizationId = userData[0]?.organization?.id;
+    const filteredByOrg = data.filter((location: any) => location.organization.id === userOrganizationId);
+    return filteredByOrg;
 }
 
 export default async function LocationsPage({ }: Props) {

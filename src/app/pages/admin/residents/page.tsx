@@ -2,13 +2,18 @@ import { getXataClient } from '@/xata';
 import React from 'react'
 import { DataTable } from "./data-table"
 import { Resident, columns } from "./columns"
+import { auth } from '@clerk/nextjs';
 
 type Props = {}
+const { userId } = auth();
 
 async function getResidents() {
     const xata = getXataClient();
     const data = await xata.db.residents.getAll();
-    return data;
+    const userData = await xata.db.users.filter({ user_id: userId }).getMany();
+    const userOrganizationId = userData[0]?.organization?.id;
+    const filteredByOrg = data.filter((resident: any) => resident.organization.id === userOrganizationId);
+    return filteredByOrg;
 }
 
 export default async function ResidentsPage({ }: Props) {

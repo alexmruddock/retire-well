@@ -27,6 +27,13 @@ export default function Navbar() {
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuItem>
+                                <Link href="/pages/admin/messages">
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                        Messages
+                                    </NavigationMenuLink>
+                                </Link>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
                                 <Link href="/pages/admin/residents">
                                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Residents
@@ -94,7 +101,7 @@ export default function Navbar() {
                 }
             </div>
             <div>
-                <UserButton afterSignOutUrl='/sign-in'/>
+                <UserButton afterSignOutUrl='/sign-in' />
             </div>
         </nav>
     )

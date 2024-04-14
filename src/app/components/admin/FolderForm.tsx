@@ -23,7 +23,7 @@ export default function FolderForm({ handleCreateFolder } : { handleCreateFolder
                     New Name
                 </label>
                 <input
-                    className="shadow appearance-none border-2 border-gray-700 rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-non focus:shadow-outline bg-transparent"
+                    className="shadow appearance-none border-2 border-gray-700 rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline bg-transparent"
                     name="name"
                     id="name"
                     type="text"
